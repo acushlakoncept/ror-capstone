@@ -13,105 +13,17 @@
   <body>
 
     <div class="container-fluid">
-    <div class="row">
-      <div class="col-10 offset-2 position-fixed navbar-dark bg-primary" style="z-index: 2000">
-              <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
-            </div>
-    </div>
-
+      <%= render 'shared/top-nav' %>
         <div class="row">
-            <div class="col-2 px-1 bg-dark position-fixed" id="sticky-sidebar">
-                <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2">
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link</a>
-                  <a href="./" class="nav-link">Link ...</a>
-                </div>
-            </div>
-
-            
-
+            <%= render 'shared/side-nav' %>
             <div class="col offset-2 mt-5" id="main">
-                
               <div class="row">
-
-                <div class="col-10 pt-4 pr-5">
+                <div class="col-10 pt-5 pr-5">
                 <%= yield %>
                 </div>
-
-              
-
-                <div class="col-2 offset-8 px-1 bg-light position-fixed pt-4" id="sticky-sidebar">
-                    <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2">
-                      <a href="./" class="nav-link">First Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link</a>
-                      <a href="./" class="nav-link">Link ...</a>
-                    </div>
+                <%= render 'shared/right-side'%>
                 </div>
-
-                </div>
-
             </div>
-
-            
-            
         </div>
     </div>
 
