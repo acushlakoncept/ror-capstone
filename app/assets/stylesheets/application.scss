@@ -23,3 +23,21 @@
   .bg-custom-side {
     background-color: #1c2a3d !important;
   }
+
+  .sidebar-links {
+
+    &__anchor{
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    &__icon{
+      fill: #fff;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .follow {
+    font-size: 12px;
+  }
