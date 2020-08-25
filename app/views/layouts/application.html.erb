@@ -10,7 +10,7 @@
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap" %>
   </head>
 
-  <body>
+  <body class="bg-light">
 
     <div class="container-fluid">
       <%= render 'shared/top-nav' %>
@@ -18,7 +18,7 @@
             <%= render 'shared/side-nav' %>
             <div class="col offset-2 mt-5" id="main">
               <div class="row">
-                <div class="col-10 pt-5 pr-5">
+                <div class="col-10 pt-5 pr-5 ">
                 <%= yield %>
                 </div>
                 <%= render 'shared/right-side'%>
