@@ -4,6 +4,17 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:username) }
   it { should validate_presence_of(:fullname) }
 
+  it do
+    should validate_length_of(:username)
+      .is_at_most(10)
+      .with_message('Maximum allowed username is 10 characters.')
+  end
+
+  it do
+    should validate_length_of(:fullname)
+      .is_at_most(20)
+      .with_message('Maximum allowed fullname is 20 characters.')
+  end
 
 
 end
