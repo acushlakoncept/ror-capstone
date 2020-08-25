@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
     redirect_to root_path if logged_in?
   end
 
   def create
-    @user = User.create(sign_up_params)
+    @user = User.new(sign_up_params)
     if @user.save
       flash[:notice] = 'Account was created successfully'
       session[:username] = @user.username

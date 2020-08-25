@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
     def new; end
   
     def create
-      @user = User.find_by(username: params[:session][:username])
+      @user = User.find_by(username: params[:session][:username].strip.downcase!)
   
       if @user
         session[:username] = @user.username
