@@ -9,23 +9,9 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "GET /create" do
+  describe "GET /login" do
     it "returns http success" do
-      get "/users/create"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /show" do
-    it "returns http success" do
-      get "/users/show"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /destroy" do
-    it "returns http success" do
-      get "/users/destroy"
+      get "/login"
       expect(response).to have_http_status(:success)
     end
   end
