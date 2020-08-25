@@ -1,12 +1,13 @@
 <h1 class="text-center">Create Account</h1>
 
-<ul class="list">
-    <% @user.errors.messages.values.each do |message| %>
-      <%  message.each do |m| %>
-        <li><%= m %></li>
-      <% end %>
-    <% end %>
-</ul>
+<% @user.errors.messages.values.each do |message| %>
+  <%  message.each do |m| %>
+  <div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= m %>
+  </div>
+  <% end %>
+<% end %>
 
 <%= form_for(@user) do |f| %>
   <div class="form-group">

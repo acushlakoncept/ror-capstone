@@ -2,10 +2,11 @@ class SessionsController < ApplicationController
     def new; end
   
     def create
-      @user = User.find_by(username: params[:session][:user])
+      @user = User.find_by(username: params[:session][:username])
   
       if @user
         session[:username] = @user.username
+        flash[:success] = 'You have successfully signed in'
         redirect_to root_path
       else
         flash.now[:danger] = 'Something wrong with the login information'
