@@ -1,2 +1,13 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1 class="text-center">Create Account</h1>
+<%= form_for(@user) do |f| %>
+  <div class="form-group">
+     <%= f.text_field :username, autofocus: true, placeholder: "Enter a username", class: "form-control"  %>
+ </div>
+
+<div class="form-group">
+     <%= f.text_field :username, placeholder: "Enter Fullname", class: "form-control"  %>
+ </div>
+ <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+</div>
+<% end %>
