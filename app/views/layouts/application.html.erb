@@ -15,11 +15,11 @@
     <div class="container-fluid">
       <%= render 'shared/top-nav' %>
         <div class="row">
-        <div class="col-2 px-1 bg-custom-side  position-fixed" id="sticky-sidebar">
-          <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2">
-            <%= render 'shared/side-nav' if logged_in? %>
+          <div class="col-2 px-1 bg-custom-side  position-fixed" id="sticky-sidebar">
+            <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2">
+              <%= render 'shared/side-nav' if logged_in? %>
+            </div>
           </div>
-        </div>
             <div class="col offset-2 mt-5" id="main">
               <div class="row">
                 <div class="col-9 pt-5 pr-5 " style="z-index:2500"> 
