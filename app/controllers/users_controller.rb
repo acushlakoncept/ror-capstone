@@ -17,9 +17,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def destroy
+    session[:username] = nil
+    flash[:success] = 'You have successfully logged out'
+    redirect_to new_user_path
   end
 
 
