@@ -20,10 +20,15 @@ $blue-dark: #1c2a3d;
 $blue-sky: #57a8e5;
 $text-dark: #6c8297;
 $text-light: #fafcfc;
+$text-gray: #b3b4b6;
 $black: #000;
 
  body {
     font-family: "Poppins", sans-serif;
+  }
+
+  .text-gray {
+    color: $text-gray;
   }
 
   .bg-custom-side {
@@ -76,4 +81,11 @@ $black: #000;
     background-color: $blue-sky !important;
     color: $text-light !important;
     fill: $text-light !important;
+}
+
+.who-to-follow {
+  
+  .follow-content {
+    line-height: 1px;
   }
+}
