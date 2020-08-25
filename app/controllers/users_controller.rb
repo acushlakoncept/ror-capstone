@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    #TODO: redirect to root path if logged in
+    redirect_to root_path if logged_in?
   end
 
   def create
@@ -18,12 +18,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-  end
-
-  def destroy
-    session[:username] = nil
-    flash[:success] = 'You have successfully logged out'
-    redirect_to new_user_path
   end
 
 
