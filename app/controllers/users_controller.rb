@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(sign_up_params)
+    @user = User.create(sign_up_params)
     if @user.save
       flash[:notice] = 'Account was created successfully'
       session[:username] = @user.username

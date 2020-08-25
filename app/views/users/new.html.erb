@@ -1,16 +1,26 @@
 <h1 class="text-center">Create Account</h1>
 
+<ul class="list">
+    <% @user.errors.messages.values.each do |message| %>
+      <%  message.each do |m| %>
+        <li><%= m %></li>
+      <% end %>
+    <% end %>
+</ul>
+
 <%= form_for(@user) do |f| %>
   <div class="form-group">
      <%= f.text_field :username, autofocus: true, placeholder: "Enter a username", class: "form-control"  %>
  </div>
 
 <div class="form-group">
-     <%= f.text_field :username, placeholder: "Enter Fullname", class: "form-control"  %>
+     <%= f.text_field :fullname, placeholder: "Enter Fullname", class: "form-control"  %>
  </div>
  <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
     <small>Already have an account?</small> <%= link_to 'Sign in', login_path %>
 </div>
 <% end %>
+
+
 
