@@ -1,7 +1,7 @@
 
     
         <div class="user-photo d-flex align-items-center p-2 border-bottom border-dark">
-            <img src="https://source.unsplash.com/random/60x60" class="rounded pr-2" alt="user">
+            <img src="<%= current_user.photo %>" class="pr-2 rounded-circle" alt="<%= current_user.username %>">
             <h5 class="user-name"><%= current_user.fullname %></h5>
         </div>
 

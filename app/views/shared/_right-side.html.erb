@@ -3,7 +3,7 @@
 
     <% @not_following.each do |not_following| %>
     <div class="d-flex flex-row mt-3 mb-4 who-to-follow">
-            <div class="author"><img src="https://source.unsplash.com/random/32x32" class="pr-2 rounded-circle" alt="user"></div>
+            <div class="author"><img src="<%= not_following.photo %>" class="pr-2 rounded-circle" alt="<%= not_following.username %>"></div>
             <div class="follow-content">
                 <h6><strong><%= not_following.fullname %></strong></h6>
                 <% if not_following.followers.count > 0 %>
