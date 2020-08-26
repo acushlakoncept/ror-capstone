@@ -11,5 +11,5 @@ class User < ApplicationRecord
      
     before_save { self.username.downcase!}
 
-    has_many :users
+    has_many :opinions, foreign_key: :author_id
 end

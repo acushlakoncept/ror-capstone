@@ -3,13 +3,13 @@
   <div class="card mb-5">
     
     <div class="card-body">
-      <form>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">TWEET SOMETHING</label>
-            <input type="text" class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Compose new tweet">
-        </div>
-        <button type="submit" class="btn btn-primary d-none">Submit</button>
-        </form>
+
+        
+
+       <%= form_for(@opinion, url: opinion_path) do |f| %>
+            <%= f.text_field :text, autofocus: true, class: "form-control", placeholder: "Enter a message..." %>
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+        <% end %>
     </div>
   </div>
 
@@ -18,6 +18,9 @@
     
     <div class="card-body">
         <h5 class="card-title border-bottom pb-3">4 New Tweets</h5>
+
+        <%= render @opinions %>
+
         <div class="tweet-box d-flex flex-row mt-3">
             <div class="author"><img src="https://source.unsplash.com/random/60x60" class="rounded pr-2" alt="user"></div>
             <div class="tweet-content">
