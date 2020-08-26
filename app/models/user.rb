@@ -10,4 +10,6 @@ class User < ApplicationRecord
                                   too_short: 'Minimum allowed characters for fullname is 6'}  
      
     before_save { self.username.downcase!}
+
+    has_many :users
 end
