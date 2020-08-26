@@ -18,6 +18,6 @@ class User < ApplicationRecord
     before_save { self.username.downcase!}
 
     def not_following
-        User.where.not(id: self.follows)
+        User.where.not(id: self.follows).order('created_at DESC')
     end
 end
