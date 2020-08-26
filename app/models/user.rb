@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :opinions
+
     validates_uniqueness_of :username, case_sensitive: false, message: 'Username already taken.'
     validates_presence_of :username, message: 'Username cannot be blank'
     validates_presence_of :fullname, message: 'FullName cannot be blank'
@@ -10,6 +12,4 @@ class User < ApplicationRecord
                                   too_short: 'Minimum allowed characters for fullname is 6'}  
      
     before_save { self.username.downcase!}
-
-    has_many :opinions, foreign_key: :author_id
 end
