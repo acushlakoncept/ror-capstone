@@ -1,59 +1,18 @@
 <h1>Welcome to Home</h1>
 
-  <div class="card mb-5">
-    
+<div class="card mb-5">
     <div class="card-body">
-
-        
-
-       <%= form_for(@opinion, url: opinion_path) do |f| %>
+        <%= form_for(@opinion, url: opinion_path) do |f| %>
             <%= f.text_field :text, autofocus: true, class: "form-control", placeholder: "Enter a message..." %>
             <%#= f.submit "Submit", class: "btn btn-primary" %>
         <% end %>
     </div>
-  </div>
+</div>
 
-
-    <div class="card">
-    
+<div class="card">
     <div class="card-body">
         <h5 class="card-title border-bottom pb-3">4 New Tweets</h5>
-
         <%= render @opinions %>
-
-        <div class="tweet-box d-flex flex-row mt-3">
-            <div class="author"><img src="https://source.unsplash.com/random/60x60" class="rounded pr-2" alt="user"></div>
-            <div class="tweet-content">
-                <h6><strong>Taylor Swift</strong><span class="float-right">2h</span></h6>
-
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-        </div>
-
-        <div class="tweet-box d-flex flex-row mt-3">
-            <div class="author"><img src="https://source.unsplash.com/random/60x60" class="rounded pr-2" alt="user"></div>
-            <div class="tweet-content">
-                <h6><strong>Taylor Swift</strong><small class="float-right">2h</small></h6>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-        </div>
-
-        <div class="tweet-box d-flex flex-row mt-3">
-            <div class="author"><img src="https://source.unsplash.com/random/60x60" class="rounded pr-2" alt="user"></div>
-            <div class="tweet-content">
-                <h6><strong>Taylor Swift</strong><small class="float-right">2h</small></h6>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-        </div>
-
-
-        <div class="tweet-box d-flex flex-row mt-3">
-            <div class="author"><img src="https://source.unsplash.com/random/60x60" class="rounded pr-2" alt="user"></div>
-            <div class="tweet-content">
-                <h6><strong>Taylor Swift</strong><small class="float-right">2h</small></h6>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-        </div>
     </div>
-  </div>
+</div>
 
