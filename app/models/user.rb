@@ -18,7 +18,6 @@ class User < ApplicationRecord
     before_save { self.username.downcase!}
 
     def not_following
-        yet_to_follow = Following.where.not(follower_id: self.followings)
-        User.where(id: yet_to_follow)
+        User.where.not(id: self.follows)
     end
 end
