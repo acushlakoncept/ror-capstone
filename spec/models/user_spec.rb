@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  describe 'User validations' do
+  describe 'Validations' do
     it do
       should validate_presence_of(:username)
         .with_message('Username cannot be blank')
@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe 'User Associations' do
+  describe 'Associations' do
     it { should have_many(:opinions).with_foreign_key(:author_id) }
     it { should have_many(:followings).with_foreign_key(:follower_id) }
     it { should have_many(:follows).through(:followings) }

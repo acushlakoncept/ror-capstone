@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Opinion, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Validations' do
+    it { should validate_presence_of(:text) }
+    it { should validate_length_of(:text).is_at_most(180) }
+    it { should_not validate_length_of(:text).is_at_least(2) }
+  end
 end
