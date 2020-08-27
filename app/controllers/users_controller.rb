@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new
     @user = User.new
     redirect_to root_path if logged_in?
@@ -22,7 +21,6 @@ class UsersController < ApplicationController
     @opinion = Opinion.new
     @opinions = @user.opinions
   end
-
 
   private
 

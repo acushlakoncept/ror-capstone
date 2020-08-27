@@ -33,5 +33,4 @@ RSpec.describe User, type: :model do
       .is_at_least(5)
       .with_message('Minimum allowed characters for fullname is 6')
   end
-
 end
