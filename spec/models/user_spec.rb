@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   describe 'Validations' do
     it do
       should validate_presence_of(:username)
@@ -14,13 +13,13 @@ RSpec.describe User, type: :model do
     end
     it { should_not validate_length_of(:username).is_at_least(2) }
     it { should_not validate_length_of(:username).is_at_most(11) }
-    it { should validate_uniqueness_of(:username).case_insensitive.with_message("Username already taken.")}
+    it { should validate_uniqueness_of(:username).case_insensitive.with_message('Username already taken.') }
 
     it do
       should validate_presence_of(:fullname)
         .with_message('FullName cannot be blank')
     end
-    
+
     it do
       should validate_length_of(:fullname)
         .is_at_most(20)
@@ -40,6 +39,4 @@ RSpec.describe User, type: :model do
     it { should have_many(:follows).through(:followings) }
     it { should have_many(:followers).through(:inverse_followings) }
   end
-
 end
-
