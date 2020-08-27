@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(sign_up_params)
+    @user.username = @user.username.downcase
     if @user.save
       flash[:notice] = 'Account was created successfully'
       session[:username] = @user.username

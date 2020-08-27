@@ -15,8 +15,6 @@ class User < ApplicationRecord
                                  too_long: 'Maximum allowed fullname is 20 characters.',
                                  too_short: 'Minimum allowed characters for fullname is 6' }
 
-  before_save { username.downcase! }
-
   def not_following
     User.where.not(id: follows).where.not(id: id).order('created_at DESC')
   end
