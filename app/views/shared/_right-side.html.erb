@@ -8,13 +8,9 @@
                 <h6><strong>
                  <%= link_to not_following.fullname, profile_path(not_following.username), class: "text-dark" %>
                  </strong></h6>
-                <% if not_following.followers.count > 0 %>
-                <small class="text-gray">Followed by  
-                    <%= link_to not_following.followers.first.fullname, profile_path(not_following.followers.first.username) %>
+                 <small class="text-gray">
+                    <%= display_follower_count(not_following) %>
                 </small>
-                <% else %>
-                <small class="text-gray">No Followers</small>
-                <% end %>
             </div>
     </div>
     <% end %>
