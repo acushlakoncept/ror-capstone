@@ -49,4 +49,9 @@ describe 'Authenticated User Activities', type: :feature do
         find('a.follow_me').click
         expect(page).to have_text('1 Following')
     end
+
+    it 'logs out a user' do
+        click_link 'Log out'
+        expect(current_path).to eq(login_path)
+    end
 end
