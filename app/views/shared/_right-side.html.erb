@@ -8,6 +8,8 @@
                 <h6><strong><%= not_following.fullname %></strong></h6>
                 <% if not_following.followers.count > 0 %>
                 <small class="text-gray">Followed by <a href="#"><%= not_following.followers.first.fullname %></a> </small>
+                <% else %>
+                <small class="text-gray">No Followers</small>
                 <% end %>
             </div>
     </div>
