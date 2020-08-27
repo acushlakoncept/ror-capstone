@@ -1,9 +1,20 @@
 <div class="col-3 offset-7 px-1 bg-light position-fixed pt-5 pl-5 pr-4" id="sticky-sidebar">
 <div class="text-center mb-5">
+      
+      <%= link_to "#" do %>
+      <svg viewBox="0 0 496 496" class="sidebar-links__icon">
+        <g>
+          <path d="M248,0C111.033,0,0,111.033,0,248c0.154,136.903,111.097,247.846,248,248c136.967,0,248-111.033,248-248S384.967,0,248,0z M248,480C119.87,480,16,376.13,16,248C16.146,119.93,119.93,16.146,248,16c128.13,0,232,103.87,232,232S376.13,480,248,480z"/>
+		<path d="M400,240H256V96c0-4.418-3.582-8-8-8s-8,3.582-8,8v144H96c-4.418,0-8,3.582-8,8s3.582,8,8,8h144v144c0,4.418,3.582,8,8,8s8-3.582,8-8V256h144c4.418,0,8-3.582,8-8S404.418,240,400,240z"/>
+        </g>
+      </svg>
+      <% end %>
+
+
      <img src="<%= @user.photo %>" class="pr-2 rounded-circle profile-img" alt="<%= @user.username %>">
      <div class="user-info">
         <h5 class="mt-2"><%= @user.fullname %><br><small class="text-gray">@<%= @user.username %></small></h5>
-        <div class="stats border-top border-bottom pt-2 pb-2 d-flex flex-row justify-content-around">
+        <div class="stats border-top border-bottom pt-2 pb-2 d-flex flex-row flex-wrap justify-content-around">
             <h5><%= @user.opinions.count %> <br><small>Tweets</small></h5>
             <h5><%= @user.follows.count %> <br><small>Following</small></h5>
             <h5><%= @user.followers.count %><br><small>Followers</small></h5>
@@ -16,10 +27,20 @@
     <% @user.followers.each do |follower| %>
     <div class="d-flex flex-row align-items-center mt-3 mb-4 who-to-follow">
             <div class="author"><img src="<%= follower.photo %>" class="pr-2 rounded-circle" alt="<%= follower.username %>"></div>
-            <div class="follow-content">
+            <div class="follow-content d-flex flex-row justify-content-between">
                 <h6><strong>
-                 <%= link_to follower.fullname, profile_path(follower.username), class: "text-dark" %>
-                 </strong></h6>
+                 <%= link_to follower.fullname, profile_path(follower.username), class: "text-dark" %></strong><br>
+                 <small class="text-gray">@<%= follower.username %></small>
+                 </h6>
+                 <%= link_to "#" do %>
+                    <svg viewBox="0 0 496 496" class="sidebar-links__icon align-item-end">
+                        <g>
+                        <path d="M248,0C111.033,0,0,111.033,0,248c0.154,136.903,111.097,247.846,248,248c136.967,0,248-111.033,248-248S384.967,0,248,0z M248,480C119.87,480,16,376.13,16,248C16.146,119.93,119.93,16.146,248,16c128.13,0,232,103.87,232,232S376.13,480,248,480z"/>
+                        <path d="M400,240H256V96c0-4.418-3.582-8-8-8s-8,3.582-8,8v144H96c-4.418,0-8,3.582-8,8s3.582,8,8,8h144v144c0,4.418,3.582,8,8,8s8-3.582,8-8V256h144c4.418,0,8-3.582,8-8S404.418,240,400,240z"/>
+                        </g>
+                    </svg>
+                 <% end %>
+                 
             </div>
     </div>
     <% end %>
