@@ -1,2 +1,21 @@
-<h1>Welcome <%= @user.fullname %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
+ <div class="cover_image bg-gray mb-2" >
+ <img src="<%= @user.cover_image %>" class="pr-2 rounded-circle" alt="<%= @user.username %>">
+ </div>
+<h2>Tweets</h2>
+
+
+<div class="card mb-5">
+    <div class="card-body">
+    <h5 class="card-title border-bottom pb-3">TWEET TO <%= @user.fullname.upcase %></h5>
+        <%= form_for(@opinion, url: opinion_path) do |f| %>
+            <%= f.text_field :text, autofocus: true, class: "form-control", placeholder: "Enter a message..." %>
+        <% end %>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title border-bottom pb-3">ALL TWEETS TO <%= @user.fullname.upcase %></h5>
+        <%= render @opinions %>
+    </div>
+</div>
