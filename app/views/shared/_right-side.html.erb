@@ -2,12 +2,16 @@
 <h6 class="border-bottom pb-3">WHO TO FOLLOW</h6>
 
     <% @not_following.each do |not_following| %>
-    <div class="d-flex flex-row mt-3 mb-4 who-to-follow">
+    <div class="d-flex flex-row align-items-center mt-3 mb-4 who-to-follow">
             <div class="author"><img src="<%= not_following.photo %>" class="pr-2 rounded-circle" alt="<%= not_following.username %>"></div>
             <div class="follow-content">
-                <h6><strong><%= not_following.fullname %></strong></h6>
+                <h6><strong>
+                 <%= link_to not_following.fullname, profile_path(not_following.username), class: "text-dark" %>
+                 </strong></h6>
                 <% if not_following.followers.count > 0 %>
-                <small class="text-gray">Followed by <a href="#"><%= not_following.followers.first.fullname %></a> </small>
+                <small class="text-gray">Followed by  
+                    <%= link_to not_following.followers.first.fullname, profile_path(not_following.followers.first) %>
+                </small>
                 <% else %>
                 <small class="text-gray">No Followers</small>
                 <% end %>
