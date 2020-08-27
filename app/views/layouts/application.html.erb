@@ -25,7 +25,11 @@
                 <div class="col-9 pt-5 pr-5 " style="z-index:2500"> 
                 <%= yield %>
                 </div>
-                <%= render 'shared/right-side' if (logged_in? && params[:action] == "index") %>
+                <% if logged_in? && params[:action] == "index" %>
+                  <%= render 'shared/right-side' %>
+                <% elsif params[:action] == "show" %>
+                  <%= render 'shared/profile' %>
+                <% end %>
                 </div>
             </div>
         </div>

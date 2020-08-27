@@ -4,8 +4,8 @@ class OpinionsController < ApplicationController
     def create
         @opinion =  current_user.opinions.build(opinion_params)
         if @opinion.save
-            flash.now[:notice] = 'Opinion was created successfully'
-            redirect_to root_path
+            flash[:notice] = 'Opinion was created successfully'
+            redirect_back(fallback_location: root_path)
         else
             flash.now[:alert] = 'Something went wrong'
         end

@@ -1,20 +1,13 @@
 <div class="col-3 offset-7 px-1 bg-light position-fixed pt-5 pl-5 pr-4" id="sticky-sidebar">
-<h6 class="border-bottom pb-3">WHO TO FOLLOW</h6>
+<h6 class="border-bottom pb-3">Followers</h6>
 
-    <% @not_following.each do |not_following| %>
+    <% @user.followers.each do |follower| %>
     <div class="d-flex flex-row align-items-center mt-3 mb-4 who-to-follow">
-            <div class="author"><img src="<%= not_following.photo %>" class="pr-2 rounded-circle" alt="<%= not_following.username %>"></div>
+            <div class="author"><img src="<%= follower.photo %>" class="pr-2 rounded-circle" alt="<%= follower.username %>"></div>
             <div class="follow-content">
                 <h6><strong>
-                 <%= link_to not_following.fullname, profile_path(not_following.username), class: "text-dark" %>
+                 <%= link_to follower.fullname, profile_path(follower.username), class: "text-dark" %>
                  </strong></h6>
-                <% if not_following.followers.count > 0 %>
-                <small class="text-gray">Followed by  
-                    <%= link_to not_following.followers.first.fullname, profile_path(not_following.followers.first.username) %>
-                </small>
-                <% else %>
-                <small class="text-gray">No Followers</small>
-                <% end %>
             </div>
     </div>
     <% end %>
