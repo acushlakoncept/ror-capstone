@@ -33,13 +33,13 @@ describe 'Authenticated User Activities', type: :feature do
   it 'visits user profile page' do
     visit profile_path(@user1.username)
     expect(page).to have_current_path('/users/acushla')
-    expect(page).to have_text('TWEET TO UDUAK ESSIEN')
+    expect(page).to have_text('JOB HINT TO UDUAK ESSIEN')
   end
 
   it 'accesses another user path' do
     visit '/users/faith'
     expect(page).to have_http_status(:success)
-    expect(page).to have_text('TWEET TO FAITH ESSIEN')
+    expect(page).to have_text('JOB HINT TO FAITH ESSIEN')
   end
 
   it 'follows a user' do
