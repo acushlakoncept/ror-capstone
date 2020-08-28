@@ -88,6 +88,10 @@ body {
   fill: $text-light !important;
 }
 
+.follow-content {
+  width: 100%;
+}
+
 .who-to-follow {
   .follow-content {
     line-height: 1rem;
@@ -119,8 +123,4 @@ body {
   img {
     width: 100%;
   }
-}
-
-.follow-content {
-  width: 100%;
 }
