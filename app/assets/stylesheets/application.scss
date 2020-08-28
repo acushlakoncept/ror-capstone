@@ -14,8 +14,8 @@
  *= require_self
  */
 
- @import "bootstrap";
- @import "toastr/toastr";
+@import "bootstrap";
+@import "toastr/toastr";
 
 $blue-dark: #1c2a3d;
 $blue-sky: #57a8e5;
@@ -24,73 +24,103 @@ $text-light: #fafcfc;
 $text-gray: #b3b4b6;
 $black: #000;
 
- body {
-    font-family: "Poppins", sans-serif;
-  }
+body {
+  font-family: "Poppins", sans-serif;
+}
 
-  .text-gray {
-    color: $text-gray;
-  }
+.text-gray {
+  color: $text-gray;
+}
 
-  .bg-custom-side {
-    background-color: $blue-dark !important;
-  }
+.bg-custom-side {
+  background-color: $blue-dark !important;
+}
 
-  .bg-gray {
-    background-color: $text-gray !important;
-  }
+.bg-gray {
+  background-color: $text-gray !important;
+}
 
-  .bg-custom-top {
-    background-color: $blue-sky !important;
-  }
+.bg-custom-top {
+  background-color: $blue-sky !important;
+}
 
-  .sidebar-links {
-    transition: all .3s ease-in-out;
+.sidebar-links {
+  transition: all 0.3s ease-in-out;
+
+  &__anchor {
+    color: $text-dark;
+    text-transform: uppercase;
 
     &:hover {
-      background-color: $blue-sky !important;
-    }
-
-    &:hover &__anchor,
-    &:hover &__icon {
-      color: $text-light;
-      fill: $text-light;
-    }
-
-    &__anchor{
-      color: $text-dark;
-      text-transform: uppercase;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
-    &__icon{
-      fill: $text-dark;
-      width: 20px;
-      height: 20px;
+      text-decoration: none;
     }
   }
 
-  .follow {
+  &__icon {
+    fill: $text-dark;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background-color: $blue-sky !important;
+  }
+
+  &:hover &__anchor,
+  &:hover &__icon {
     color: $text-light;
-    font-size: 11px;
-
-    small {
-      color: $text-dark;
-    }
+    fill: $text-light;
   }
+}
+
+.follow {
+  color: $text-light;
+  font-size: 11px;
+
+  small {
+    color: $text-dark;
+  }
+}
 
 .active {
-    background-color: $blue-sky !important;
-    color: $text-light !important;
-    fill: $text-light !important;
+  background-color: $blue-sky !important;
+  color: $text-light !important;
+  fill: $text-light !important;
 }
 
 .who-to-follow {
-  
   .follow-content {
     line-height: 1rem;
   }
+}
+
+.profile-img {
+  transform: scale(1);
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.side-photo {
+  width: 4rem;
+}
+
+.side-profile-photo {
+  width: 8rem;
+}
+
+.cover_image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
+}
+
+.follow-content {
+  width: 100%;
 }
