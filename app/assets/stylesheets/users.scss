@@ -3,8 +3,20 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .profile-img {
-    width: 150px;
-    height: 150px;
+    transform: scale(1);
+    transition: all .4s;
+
+  &:hover {
+      transform: scale(1.1);;
+  }
+}
+
+.side-photo {
+    width: 4rem;
+}
+
+.side-profile-photo {
+    width: 8rem;
 }
 
 .cover_image {

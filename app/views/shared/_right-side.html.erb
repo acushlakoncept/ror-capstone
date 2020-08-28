@@ -3,7 +3,9 @@
 
     <% @not_following.each do |not_following| %>
     <div class="d-flex flex-row align-items-center mt-3 mb-4 who-to-follow">
-            <div class="author"><img src="<%= not_following.photo %>" class="pr-2 rounded-circle" alt="<%= not_following.username %>"></div>
+            <div class="author">
+            <%= show_photo(not_following, 'side-photo')%>
+            </div>
             <div class="follow-content">
                 <h6><strong>
                  <%= link_to not_following.fullname, profile_path(not_following.username), class: "text-dark" %>

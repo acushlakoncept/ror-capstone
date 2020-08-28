@@ -2,11 +2,7 @@
 <div class="text-center mb-5">
       <%= display_follow_btn(@user, 'shared/follow_icon') %>
       
-      <% if @user.photo.present? %>
-        <img src="<%= @user.photo %>" class="pr-2 rounded-circle profile-img" alt="<%= @user.username %>">
-      <% else %>
-        <img src="https://source.unsplash.com/random/150x150" class="pr-2 rounded-circle profile-img" alt="<%= @user.username %>">
-      <% end %>
+        <%= show_photo(@user, 'side-profile-photo')%>
      
      <div class="user-info">
         <h5 class="mt-2"><%= @user.fullname %><br><small class="text-gray">@<%= @user.username %></small></h5>
@@ -22,7 +18,9 @@
 
     <% @user.followers.each do |follower| %>
     <div class="d-flex flex-row align-items-center mt-3 mb-4 who-to-follow">
-            <div class="author"><img src="<%= follower.photo %>" class="pr-2 rounded-circle" alt="<%= follower.username %>"></div>
+            <div class="author">
+                <%= show_photo(follower)%>
+            </div>
             <div class="follow-content d-flex flex-row justify-content-between">
                 <h6><strong>
                 
