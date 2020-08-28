@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_user
+  
   def new
     @user = User.new
     redirect_to root_path if logged_in?
