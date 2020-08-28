@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+
+$blue-dark: #1c2a3d;
+$blue-sky: #57a8e5;
+$text-dark: #6c8297;
+$text-light: #fafcfc;
+$text-gray: #b3b4b6;
+$black: #000;
+
+ body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .text-gray {
+    color: $text-gray;
+  }
+
+  .bg-custom-side {
+    background-color: $blue-dark !important;
+  }
+
+  .bg-custom-top {
+    background-color: $blue-sky !important;
+  }
+
+  .sidebar-links {
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      background-color: $blue-sky !important;
+    }
+
+    &:hover &__anchor,
+    &:hover &__icon {
+      color: $text-light;
+      fill: $text-light;
+    }
+
+    &__anchor{
+      color: $text-dark;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__icon{
+      fill: $text-dark;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .follow {
+    color: $text-light;
+    font-size: 11px;
+
+    small {
+      color: $text-dark;
+    }
+  }
+
+.active {
+    background-color: $blue-sky !important;
+    color: $text-light !important;
+    fill: $text-light !important;
+}
+
+.who-to-follow {
+  
+  .follow-content {
+    line-height: 1px;
+  }
+}
