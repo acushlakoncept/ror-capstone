@@ -29,9 +29,9 @@ module ApplicationHelper
   end
 
   def show_right_aside
-    if logged_in? && params[:action] == "index"
+    if logged_in? && params[:action] == 'index'
       render partial: 'shared/right-side'
-    elsif params[:action] == "show"
+    elsif params[:action] == 'show'
       render partial: 'shared/profile'
     end
   end
