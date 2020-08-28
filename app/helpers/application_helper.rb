@@ -19,4 +19,8 @@ module ApplicationHelper
                 alt: user.username, class: 'pr-2 rounded-circle profile-img')
     end
   end
+
+  def display_settings_btn(user, the_partial)
+    render partial: the_partial, locals: { obj: user } if logged_in?
+  end
 end
