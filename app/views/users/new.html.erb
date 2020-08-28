@@ -9,7 +9,8 @@
   <% end %>
 <% end %>
 
-<%= form_for(@user) do |f| %>
+<%#= form_for(@user) do |f| %>
+<%= form_for(@user, html: {multipart: true}) do |f| %>
   <div class="form-group">
      <%= f.text_field :username, autofocus: true, placeholder: "Enter a username", class: "form-control"  %>
  </div>
@@ -17,6 +18,19 @@
 <div class="form-group">
      <%= f.text_field :fullname, placeholder: "Enter Fullname", class: "form-control"  %>
  </div>
+
+ <h5 class="border-bottom pb-2">Optional</h5>
+
+  <div class="form-group">
+     <%= f.label :photo, "Attach your profile photo" %>
+     <%= f.file_field :photo, class: "form-control"  %>
+ </div>
+
+   <div class="form-group">
+   <%= f.label :cover_image, "Attach your cover image" %>
+     <%= f.file_field :cover_image, class: "form-control"  %>
+ </div>
+
  <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
     <small>Already have an account?</small> <%= link_to 'Sign in', login_path %>

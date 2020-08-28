@@ -5,6 +5,13 @@ class User < ApplicationRecord
   has_many :inverse_followings, class_name: 'Following', foreign_key: 'followed_id'
   has_many :followers, through: :inverse_followings
 
+  has_attached_file :photo, styles: { large: "250x250", thumb: "60x60#" }
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
+  # validates_attachment_content_type :image, content_type: ['image/jpg', 'image/jpeg', 'image/png']
+
+  has_attached_file :cover_image, styles: { large: "700x250>" }
+  validates_attachment_content_type :cover_image, content_type: /\Aimage\/.*\z/
+
   validates_uniqueness_of :username, case_sensitive: false, message: 'Username already taken.'
   validates_presence_of :username, message: 'Username cannot be blank'
   validates_presence_of :fullname, message: 'FullName cannot be blank'
