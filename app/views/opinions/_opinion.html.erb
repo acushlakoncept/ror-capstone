@@ -1,5 +1,7 @@
 <div class="tweet-box d-flex flex-row mt-3">
-    <div class="author"><img src="https://source.unsplash.com/random/60x60" class="rounded pr-2" alt="user"></div>
+    <div class="author">
+    <%= show_photo(opinion.author, 'side-photo')%>
+    </div> 
     <div class="tweet-content">
         <h6><strong><%= opinion.author.fullname %> </strong></h6>
         <p class="card-text"><%= opinion.text %> </p>

@@ -9,7 +9,6 @@
   <% end %>
 <% end %>
 
-<%#= form_for(@user) do |f| %>
 <%= form_for(@user, html: {multipart: true}) do |f| %>
   <div class="form-group">
      <%= f.text_field :username, autofocus: true, placeholder: "Enter a username", class: "form-control"  %>

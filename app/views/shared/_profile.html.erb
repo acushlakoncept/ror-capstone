@@ -19,7 +19,7 @@
     <% @user.followers.each do |follower| %>
     <div class="d-flex flex-row align-items-center mt-3 mb-4 who-to-follow">
             <div class="author">
-                <%= show_photo(follower)%>
+                <%= show_photo(follower, 'side-photo')%>
             </div>
             <div class="follow-content d-flex flex-row justify-content-between">
                 <h6><strong>
