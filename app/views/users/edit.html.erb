@@ -1,0 +1,36 @@
+<h1 class="text-center">Update Account</h1>
+
+<% @user.errors.messages.values.each do |message| %>
+  <%  message.each do |m| %>
+  <div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= m %>
+  </div>
+  <% end %>
+<% end %>
+
+<%= form_for(@user, html: {multipart: true}) do |f| %>
+  <div class="form-group">
+     <%= f.text_field :username, autofocus: true, placeholder: "Enter a username", class: "form-control"  %>
+ </div>
+
+<div class="form-group">
+     <%= f.text_field :fullname, placeholder: "Enter Fullname", class: "form-control"  %>
+ </div>
+
+ <h5 class="border-bottom pb-2">Optional</h5>
+
+  <div class="form-group">
+     <%= f.label :photo, "Attach your profile photo" %>
+     <%= f.file_field :photo, class: "form-control"  %>
+ </div>
+
+   <div class="form-group">
+   <%= f.label :cover_image, "Attach your cover image" %>
+     <%= f.file_field :cover_image, class: "form-control"  %>
+ </div>
+
+ <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+</div>
+<% end %>

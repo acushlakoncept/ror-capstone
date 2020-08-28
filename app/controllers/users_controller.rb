@@ -23,6 +23,19 @@ class UsersController < ApplicationController
     @opinions = @user.opinions
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    @user.update(sign_up_params)
+
+    flash.notice = "Your profile has been updated!"
+
+    redirect_to profile_path(@user.username)
+  end
+
   private
 
   def sign_up_params
