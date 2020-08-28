@@ -23,4 +23,16 @@ module ApplicationHelper
   def display_settings_btn(user, the_partial)
     render partial: the_partial, locals: { obj: user } if logged_in?
   end
+
+  def auth_rendered_partial(the_partial)
+    render partial: the_partial if logged_in?
+  end
+
+  def show_right_aside
+    if logged_in? && params[:action] == "index"
+      render partial: 'shared/right-side'
+    elsif params[:action] == "show"
+      render partial: 'shared/profile'
+    end
+  end
 end

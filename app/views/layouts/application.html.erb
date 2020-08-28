@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-2 px-1 bg-custom-side  position-fixed" id="sticky-sidebar">
             <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2">
-              <%= render 'shared/side-nav' if logged_in? %>
+              <%= auth_rendered_partial('shared/side-nav') %>
             </div>
           </div>
             <div class="col offset-2 mt-5" id="main">
@@ -25,11 +25,7 @@
                 <div class="col-9 pt-5 pr-5 " style="z-index:2500"> 
                 <%= yield %>
                 </div>
-                <% if logged_in? && params[:action] == "index" %>
-                  <%= render 'shared/right-side' %>
-                <% elsif params[:action] == "show" %>
-                  <%= render 'shared/profile' %>
-                <% end %>
+                <%= show_right_aside %>
                 </div>
             </div>
         </div>
