@@ -9,7 +9,7 @@ Some of the advanced concepts explored in this project includes.
 - Used paperclip gem to achieve image upload for profile photo and cover image
 
 
-![screenshot](./ror-social.gif)
+![screenshot](./screenshot.gif)
 
 ## Built With
 

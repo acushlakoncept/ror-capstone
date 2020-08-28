@@ -1,6 +1,6 @@
 module ApplicationHelper
   def active_class(url_action)
-    'active' if params[:action] == url_action
+    'actived' if params[:action] == url_action
   end
 
   def show_cover_image(user)
