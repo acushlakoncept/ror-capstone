@@ -17,11 +17,11 @@
 <h6 class="border-bottom pb-3">FOLLOWED BY</h6>
 
     <% @user.followers.each do |follower| %>
-    <div class="d-flex flex-row align-items-center mt-3 mb-4 who-to-follow">
+    <div class="d-flex flex-row flex-wrap align-items-center mt-3 mb-4 who-to-follow">
             <div class="author">
                 <%= show_photo(follower, 'side-photo')%>
             </div>
-            <div class="follow-content d-flex flex-row justify-content-between">
+            <div class="follow-content d-flex flex-wrap flex-row justify-content-between">
                 <h6><strong>
                 
                  <%= link_to follower.fullname, profile_path(follower.username), class: "text-dark" %></strong><br>

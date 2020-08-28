@@ -1,7 +1,7 @@
 
     
-        <div class="user-photo d-flex align-items-center p-2 border-bottom border-dark">
-            <%= show_photo(current_user) %>
+        <div class="user-photo d-flex flex-wrap align-items-center p-2 border-bottom border-dark">
+            <%= show_photo(current_user, 'side-profile-photo') %>
             <h5 class="user-name"><%= current_user.fullname %></h5>
         </div>
 
