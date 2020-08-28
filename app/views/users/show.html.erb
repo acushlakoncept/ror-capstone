@@ -1,9 +1,5 @@
  <div class="cover_image bg-gray mb-2" >
-      <% if @user.cover_image.present? %>
-        <img src="<%= @user.cover_image %>" class="pr-2" alt="<%= @user.username %>">
-      <% else %>
-        <img src="https://source.unsplash.com/random/800x250" class="pr-2" alt="<%= @user.username %>">
-      <% end %>
+<%= show_cover_image(@user) %>
  </div>
 <h2>Tweets</h2>
 
