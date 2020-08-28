@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @user = current_user
     @user.update(sign_up_params)
 
-    flash.notice = "Your profile has been updated!"
+    flash.notice = 'Your profile has been updated!'
 
     redirect_to profile_path(@user.username)
   end
