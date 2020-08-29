@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :follows, through: :followings, source: :followed
   has_many :inverse_followings, class_name: 'Following', foreign_key: 'followed_id'
   has_many :followers, through: :inverse_followings
+  has_many :likes, dependent: :destroy
 
   has_attached_file :photo, styles: { large: '250x250', thumb: '60x60#' }
   validates_attachment_content_type :photo, content_type: %r{\Aimage/.*\z}
