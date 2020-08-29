@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post 'opinion', to: 'opinions#create'
   post 'follow', to: 'followings#create'
+  post 'likes/:opinion_id', to: 'likes#create', as: 'likes'
+  delete 'like', to: 'likes#destroy'
 
   get 'users/:username', to: 'users#show', as: 'profile'
 

@@ -4,7 +4,9 @@
     </div> 
     <div class="tweet-content">
         <h6><strong><%= link_to opinion.author.fullname, profile_path(opinion.author.username), class: "text-dark" %> </strong></h6>
-        <p class="card-text"><%= opinion.text %> </p>
+        <div class="d-flex flex-row justify-content-around">
+            <p class="card-text"><%= opinion.text %>  <%= like_or_dislike_btn(opinion) %> </p>
+        </div>
     </div>
 </div>
 

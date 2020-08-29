@@ -37,7 +37,7 @@ module ApplicationHelper
   end
 
   def like_or_dislike_btn(opinion)
-    like = Like.find_by(opinion: opinion, user: current_user)
+    like = Like.find_by(opinion_id: opinion.id, user_id: current_user.id)
     if like
       link_to('Dislike!', like_path(id: like.id, opinion_id: opinion.id), method: :delete)
     else
