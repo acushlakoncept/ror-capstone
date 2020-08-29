@@ -4,5 +4,5 @@ class Opinion < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :likes, dependent: :destroy
 
-  scope :ordered_by_most_recent, -> { includes(:author).order(created_at: :desc) }
+  scope :ordered_by_most_recent, -> { includes(:author, :likes).order(created_at: :desc) }
 end
