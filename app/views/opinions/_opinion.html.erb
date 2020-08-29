@@ -3,7 +3,7 @@
     <%= show_photo(opinion.author, 'side-photo')%>
     </div> 
     <div class="tweet-content">
-        <h6><strong><%= opinion.author.fullname %> </strong></h6>
+        <h6><strong><%= link_to opinion.author.fullname, profile_path(opinion.author.username), class: "text-dark" %> </strong></h6>
         <p class="card-text"><%= opinion.text %> </p>
     </div>
 </div>
