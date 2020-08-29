@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:username])
     @opinion = Opinion.new
-    @opinions = @user.opinions.includes(:author)
+    @opinions = @user.opinions.ordered_by_most_recent
   end
 
   def edit
