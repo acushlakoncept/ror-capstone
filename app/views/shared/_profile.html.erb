@@ -5,7 +5,7 @@
         <%= show_photo(@user, 'side-profile-photo')%>
      
      <div class="user-info">
-        <h5 class="mt-2"><%= @user.fullname %><br><small class="text-gray">@<%= @user.username %></small></h5>
+        <h5 class="mt-2"><%= link_to @user.fullname, profile_path(@user.username), class: "user-name-p" %> <br><small class="text-gray">@<%= @user.username %></small></h5>
         <div class="stats border-top border-bottom pt-2 pb-2 d-flex flex-row flex-wrap justify-content-around">
             <h5><%= @user.opinions.count %> <br><small>Tweets</small></h5>
             <h5><%= @user.follows.count %> <br><small>Following</small></h5>
