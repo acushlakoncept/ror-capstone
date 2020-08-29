@@ -124,27 +124,27 @@ body {
     width: 100%;
   }
 }
+.user-name-p {
+  color: $black;
 
-.user-name, .user-name-p {
+  &:hover {
+    color: $black;
+  }
+}
+
+.user-name,
+.user-name-p {
   color: $text-light;
   font-size: 18px;
   text-align: center;
   transform: translateY(0);
   text-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.9);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     color: $text-light;
     text-decoration: none;
     text-shadow: 0 1px 1px rgba($color: #000000, $alpha: 0.95);
     transform: translateY(1px);
-  }
-}
-
-.user-name-p {
-  color: $black;
-
-  &:hover {
-    color: $black;
   }
 }
