@@ -1,0 +1,21 @@
+ <div class="cover_image bg-gray mb-2" >
+<%= show_cover_image(@user) %>
+ </div>
+<h2>Hints</h2>
+
+
+<div class="card mb-5">
+    <div class="card-body">
+    <h5 class="card-title border-bottom pb-3">JOB HINT TO <%= @user.fullname.upcase %></h5>
+        <%= form_for(@opinion, url: opinion_path) do |f| %>
+            <%= f.text_field :text, autofocus: true, class: "form-control", placeholder: "Enter a message..." %>
+        <% end %>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title border-bottom pb-3">ALL JOB HINTS FROM <%= @user.fullname.upcase %></h5>
+        <%= render @opinions %>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="col-3 offset-7 px-1 bg-light position-fixed pt-5 pl-5 pr-4" id="sticky-sidebar">
+<div class="text-center mb-5">
+      <%= display_follow_btn(@user, 'shared/follow_icon') %>
+      
+        <%= show_photo(@user, 'side-profile-photo')%>
+     
+     <div class="user-info">
+        <h5 class="mt-2"><%= link_to @user.fullname, profile_path(@user.username), class: "user-name-p" %> <br><small class="text-gray">@<%= @user.username %></small></h5>
+        <div class="stats border-top border-bottom pt-2 pb-2 d-flex flex-row flex-wrap justify-content-around">
+            <h5><%= @user.opinions.count %> <br><small>Tweets</small></h5>
+            <h5><%= @user.follows.count %> <br><small>Following</small></h5>
+            <h5><%= @user.followers.count %><br><small>Followers</small></h5>
+        </div>
+     </div>
+</div>
+
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Followed by</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Following</a>
+        </li>
+        </ul>
+
+    <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        
+        <% @user.followers.each do |follower| %>
+            <div class="d-flex flex-row flex-wrap align-items-center mt-3 mb-4 who-to-follow">
+                    <div class="author">
+                        <%= show_photo(follower, 'side-photo')%>
+                    </div>
+                    <div class="follow-content d-flex flex-wrap flex-row justify-content-between">
+                        <h6><strong>
+                        
+                        <%= link_to follower.fullname, profile_path(follower.username), class: "text-dark" %></strong><br>
+                        <small class="text-gray">@<%= follower.username %></small>
+                        </h6>
+                        
+                        <%= display_follow_btn(follower, 'shared/follow_icon') %>
+                        
+                    </div>
+            </div>
+         <% end %>
+
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        
+        <% @user.follows.each do |follow| %>
+            <div class="d-flex flex-row flex-wrap align-items-center mt-3 mb-4 who-to-follow">
+                    <div class="author">
+                        <%= show_photo(follow, 'side-photo')%>
+                    </div>
+                    <div class="follow-content d-flex flex-wrap flex-row justify-content-between">
+                        <h6><strong>
+                        
+                        <%= link_to follow.fullname, profile_path(follow.username), class: "text-dark" %></strong><br>
+                        <small class="text-gray">@<%= follow.username %></small>
+                        </h6>
+                        
+                        <%= display_follow_btn(follow, 'shared/follow_icon') %>
+                        
+                    </div>
+            </div>
+         <% end %>
+
+    </div>
+    </div>
+
+</div>

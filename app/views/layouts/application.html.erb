@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RorCapstone</title>
+    <title>Job Hints : Twitter Clone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-light">
+
+    <div class="container-fluid">
+      <%= render 'shared/top-nav' %>
+        <div class="row">
+          <div class="col-2 px-1 bg-custom-side  position-fixed" id="sticky-sidebar">
+            <div class="nav flex-column flex-nowrap vh-100 overflow-auto text-white p-2">
+              <%= auth_rendered_partial('shared/side-nav') %>
+            </div>
+          </div>
+            <div class="col offset-2 mt-5" id="main">
+              <div class="row">
+                <div class="col-9 pt-5 pr-5 " style="z-index:2500"> 
+                <%= yield %>
+                </div>
+                <%= show_right_aside %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <% if flash.any? %>
+    <script type="text/javascript">
+
+      <% flash.each do |key, value| %>
+        <% type = key.to_s.gsub('alert', 'error').gsub('notice', 'success') %>
+        toastr.<%= type %>('<%= value %>')
+      <% end %>
+
+    </script>
+    <% end %>
+
   </body>
 </html>

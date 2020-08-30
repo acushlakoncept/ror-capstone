@@ -1,0 +1,35 @@
+<div class="col-3 offset-7 px-1 bg-light position-fixed pt-5 pl-5 pr-4" id="sticky-sidebar">
+<h6 class="border-bottom pb-3">WHO TO FOLLOW</h6>
+
+    <% @not_following.each do |not_following| %>
+    <div class="d-flex flex-row align-items-center mt-3 mb-4 who-to-follow">
+            <div class="author">
+            <%= show_photo(not_following, 'side-photo')%>
+            </div>
+            <div class="follow-content">
+                <h6><strong>
+                 <%= link_to not_following.fullname, profile_path(not_following.username), class: "text-dark" %>
+                 </strong></h6>
+                 <small class="text-gray">
+                    <%= display_follower_count(not_following) %>
+                </small>
+            </div>
+    </div>
+    <% end %>
+
+
+    <div class="account-type">
+        <small class="text-gray">
+            <a href="#">Popular accounts</a> |
+            <a href="#">Find friends</a>
+        </small>
+    </div>
+
+    <h6 class="text-gray border-top border-bottom pt-3 pb-3 mt-3 mb-3">TRENDING</h6>
+
+    <p><a href="#" class="text-gray"> #remotework </a></p>
+    <p><a href="#" class="text-gray"> Education </a></p>
+    <p><a href="#" class="text-gray"> #blacklivesmatter </a></p>
+    <p><a href="#" class="text-gray"> Jacob Blake </a></p>
+    
+</div>

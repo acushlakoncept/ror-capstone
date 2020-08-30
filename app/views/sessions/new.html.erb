@@ -1,0 +1,12 @@
+<h1 class="text-center">Sign in</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <div class="form-group">
+     <%= f.text_field :username, autofocus: true, placeholder: "Enter a username", class: "form-control"  %>
+ </div>
+
+ <div class="actions">
+    <%= f.submit 'Login', class: "btn btn-primary" %>
+    <small>Don't have account?</small> <%= link_to 'Signup', new_user_path %>
+</div>
+<% end %>
